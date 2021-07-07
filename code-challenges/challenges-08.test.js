@@ -56,6 +56,10 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
+  charArray.sort((a,b)=>{
+    return a.children.length-b.children.length;
+  });
+  return charArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,9 +71,8 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
-  let regex = /w/g;
-  let res = regex.test(str);
-  return res;
+  let check=/w/g;
+  return check.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,10 +89,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
-  
-  let regex = /[0-9]/g;
-  let res = regex.test(input);
-  return res;
+  let check=/[1-9]/g;
+  return check.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,6 +102,8 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+  let check=/world/g;
+  return check.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,6 +116,8 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+  let check =/\b[A-Z][a-z]+/g;
+  return str.match(check)!==null?str.match(check):[];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,6 +128,11 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let check =/^[A-J]/g;
+  let newArr=arr.filter(element=>{
+    return element.match(check);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
