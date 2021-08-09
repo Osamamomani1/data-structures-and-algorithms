@@ -12,6 +12,14 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
+
+  let newArr=arr.filter(element=>{
+    if( /^((Mr||Mrs||Dr||Ms).\s)[A-Z]/.test(element)){
+      return element
+    }
+})
+return newArr
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,6 +32,12 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+
+  let newArr=arr.map(element=>{
+    return element.charAt(0).toUpperCase()+element.slice(1)
+  })
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,6 +113,17 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+
+  let strIng = arr.reduce((x, y) => {
+    if (Number(y.mass) > Number(arr[0].mass)) {
+      if (x) {
+        x = x +' - ';
+      }
+      x = x + y.name;
+    }return x;
+  }, '');
+  return strIng;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,6 +142,19 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+
+  arr.sort((x,y)=>{
+    if (x[property]>y[property]) {
+    return true;
+    }else if(y[property]>x[property])
+    {
+    return -1;
+    }else{
+    return false
+    }
+    })
+    return arr
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -133,6 +171,13 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+
+  if( /^https:\/\//g.test(url)){
+    return true
+  }else{
+    return false
+  }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -154,8 +199,15 @@ Here is a sample board:
 ];
 ------------------------------------------------------------------------------------------------ */
 
+let gameArrays
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  // I need some help here 
+
+
+const detectTicTacToeWin = (board) => {
+  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
