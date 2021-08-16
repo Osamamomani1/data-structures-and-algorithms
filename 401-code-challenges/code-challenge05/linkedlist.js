@@ -65,6 +65,7 @@ list.append(2);
 
 console.log(list.toString());
 console.log(list.includes(2));
+console.log('fat7e');
 
 
 
