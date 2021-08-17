@@ -112,4 +112,43 @@ describe("LinkedList", () => {
     newList.append(2);
     expect(newList.kthFromEnd(2)).toEqual(3);
   });
+  it('linkedListZip() Happy case',()=>{
+    let newList = new LinkedList();
+    let l1=new LinkedList();
+    l1.insert(1);
+    l1.append(3);
+    l1.append(2);
+
+    let l2=new LinkedList();
+    l2.insert(5);
+    l2.append(9);
+    l2.append(4);
+    expect(newList.zipLists(l1,l2).toString()).toEqual('{1}-->{5}-->{3}-->{9}-->{2}-->{4}-->NULL')
+  });
+  it('linkedListZip() if passed empty list',()=>{
+    let newList = new LinkedList();
+    let l1=new LinkedList();
+
+    let l2=new LinkedList();
+    l2.insert(5);
+    l2.append(9);
+    l2.append(4);
+    l2.append(7);
+    l2.append(11);
+    expect(newList.zipLists(l1,l2).toString()).toEqual('{5}-->{9}-->{4}-->{7}-->{11}-->NULL')
+  });
+  it('linkedListZip() if the length not equal',()=>{
+    let newList = new LinkedList();
+    let l1=new LinkedList();
+    l1.insert(1);
+    l1.append(3);
+    l1.append(2);
+    l1.append(7);
+    l1.append(11);
+    let l2=new LinkedList();
+    l2.insert(5);
+    l2.append(9);
+    l2.append(4);
+    expect(newList.zipLists(l1,l2).toString()).toEqual('{1}-->{5}-->{3}-->{9}-->{2}-->{4}-->{7}-->{11}-->NULL')
+  });
 });
