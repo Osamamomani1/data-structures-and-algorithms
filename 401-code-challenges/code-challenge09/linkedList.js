@@ -40,7 +40,7 @@ class LinkedList {
       newNode.next=current;
       this.head=newNode;
     }
-    while (current) {
+    while (current.next) {
       if(current.next.value==value){
         newNode.next=current.next;
         current.next=newNode;
@@ -151,6 +151,17 @@ class LinkedList {
 
     return listzip
   }
+
+  Reverse(){
+    let temp= new LinkedList();
+    let current=this.head
+    temp.insert(current.value)
+  while (current.next!=null) {
+    temp.insertBefore(current.value,current.next.value)
+    current=current.next;
+  }
+  return temp
+  }
   
 }
 
@@ -159,35 +170,11 @@ let list = new LinkedList();
 list.insert(1);
 list.append(2);
 list.append(3);
-list.insertBefore(2,5);
-list.insertAfter(1,4);
+list.append(4);
+list.append(5);
+list.append(6);
 
-// // console.log('fat7e');
-// console.log(list.toString());
-// // console.log(list.length);
-console.log(list.kthFromEnd(5));
-
-let list01 = new LinkedList();
-let list02 = new LinkedList();
-
-// list01.insert(1);
-// list01.append(3);
-// list01.append(2);
-
-
-
-
-
-list02.insert(5);
-list02.append(9);
-list02.append(4)
-list02.append(7);
-list02.append(11);
-
-
-
-// console.log(list.zipLists(list01, list02));
-console.log(list.zipLists(list01, list02).toString());
+console.log(list.Reverse().toString());
 
 
 
