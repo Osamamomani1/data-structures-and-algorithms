@@ -1,8 +1,8 @@
 'use strict';
 
-let LinkedList = require('../linkedList');
+let LinkedList = require('../linkedlist');
 
-describe('LinkedList', ()=> {
+xdescribe('LinkedList', ()=> {
 
     it('the initial constructor()', ()=> {
         let newList = new LinkedList();
