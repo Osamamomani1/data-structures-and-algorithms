@@ -162,6 +162,35 @@ class LinkedList {
   }
   return temp
   }
+  palindrome(){
+    let current=this.head;
+    let value=this.head
+    let merrorValue;
+    let i = this.length-1;
+    let x = Math.floor(this.length/2)
+    let y = this.length-1;
+    while(x>0){
+      y--;
+    console.log('i-->',i);
+    while(i>0){
+    console.log(current.value);
+    current=current.next;
+    i--;
+    }
+    console.log('i-->',i);
+    merrorValue=current
+    current=this.head
+    console.log('merror',merrorValue.value);
+    i=y
+    console.log('i-->',i);
+    if(value.value!=merrorValue.value) return false ;
+    console.log('value',value.value);
+    value=value.next;
+    console.log('value',value.value);
+    x--
+    }
+    return true ;
+    }
   
 }
 
@@ -171,10 +200,12 @@ list.insert(1);
 list.append(2);
 list.append(3);
 list.append(4);
-list.append(5);
-list.append(6);
+list.append(3);
+list.append(2);
+list.append(1);
 
-console.log(list.Reverse().toString());
+
+console.log(list.palindrome());
 
 
 

@@ -102,6 +102,7 @@ class LinkedList {
 
     let current= this.head;
     let i = this.length - k-1; //-1 to avoid null value in case k=0
+    console.log('i->>>',i);
     while (i>0) {
       current=current.next;
       i--;
@@ -120,8 +121,9 @@ list.insertAfter(1,4);
 
 // console.log('fat7e');
 console.log(list.toString());
+console.log('LENGTH',list.length);
 // console.log(list.length);
-console.log(list.kthFromEnd(5));
+console.log(list.kthFromEnd(1));
 
 
 
