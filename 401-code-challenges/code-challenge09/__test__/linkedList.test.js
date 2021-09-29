@@ -151,4 +151,13 @@ describe("LinkedList", () => {
     l2.append(4);
     expect(newList.zipLists(l1,l2).toString()).toEqual('{1}-->{5}-->{3}-->{9}-->{2}-->{4}-->{7}-->{11}-->NULL')
   });
+  it('Reverse()',()=>{
+    let newList = new LinkedList();
+    newList.insert(1);
+    newList.append(2);
+    newList.append(3);
+    newList.append(4);
+    newList.append(5);
+    expect(newList.Reverse().toString()).toEqual('{5}-->{4}-->{3}-->{2}-->{1}-->NULL')
+  })
 });
